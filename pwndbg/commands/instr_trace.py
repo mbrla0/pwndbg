@@ -103,5 +103,5 @@ def instr_trace(trace_file: str, end_address: int, format: str) -> None:
         )
         pwndbg.dbg.selected_inferior().dispatch_execution_controller(dump_trace_log)
         print(message.info("instr-trace: Complete."))
-    except pwndbg.dbg_mod.Error as e:
+    except pwndbg.dbg_mod.DebuggerError as e:
         print(message.error(f"instr-trace Error: {e}"))
